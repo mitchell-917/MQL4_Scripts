@@ -40,8 +40,6 @@ void OnStart()
    {
    Alert("Order NOT Confirmed");
    }    
-
-   Sleep(2000); // Delay of 2 secs
    
 // Confirm Order  
    bool os_result = OrderSelect(ticket, SELECT_BY_TICKET);
