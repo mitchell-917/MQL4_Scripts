@@ -1,9 +1,8 @@
 //+------------------------------------------------------------------+
 //|                                                                  |
-//|                        Copyright 2021, Mitchell Perry          . |
+//|                                                  Mitchell Perry. |
 //|                                                                  |
 //+------------------------------------------------------------------+
-#property copyright "Copyright 2021, Mitchell Perry"
 #property version   "1.00"
 #property strict
 #property script_show_inputs
