@@ -9,7 +9,8 @@
 //+------------------------------------------------------------------+
 
 //+------------------------------------------------------------------+
-//  Declaring Variables outside of Void OnTick()
+// Outside of Void OnTick()  
+// Declare Variables & Function
 //+------------------------------------------------------------------+
    bool close_buy;
    bool close_sell;
@@ -19,7 +20,7 @@
    int MagicNumber = 1001;
 
 //+------------------------------------------------------------------+
-//  Checks if it's Friday @ 19:00 GMT or Later outside of Void OnTick()
+//  Checks if it's Friday @ 19:00 GMT or Later
 //+------------------------------------------------------------------+
 bool Allow_Trading()
 {
@@ -30,8 +31,8 @@ bool Allow_Trading()
 }    
 
 //+------------------------------------------------------------------+
-//  If Allow_Trading() is False AKA {Friday @ 19:00 GMT or Later} 
-//  CLOSE ALL TRADES!! Inside Void OnTick()
+// Within Void OnTick()  
+// If Allow_Trading() == False // CLOSE ALL TRADES!!
 //+------------------------------------------------------------------+
  if((Allow_Trading()==false) && (getOpenTradesThisPair(MagicNumber)>0))
     {
