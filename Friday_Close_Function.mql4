@@ -5,6 +5,9 @@
 //+------------------------------------------------------------------+
 #property version   "1.0"
 #property strict
+#property description "To be used with the MT4 platform"
+
+
 
 //+------------------------------------------------------------------+
 
