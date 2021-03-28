@@ -1,5 +1,5 @@
 //+------------------------------------------------------------------+
-//|                                        Friday_Close_Function.mq4 |
+//|                                                 Weekend_Risk.mq4 |
 //|                                                   Mitchell Perry |
 //|                                                                  |
 //+------------------------------------------------------------------+
@@ -7,14 +7,11 @@
 #property strict
 #property description "To be used with the MT4 platform"
 
-
-
-//+------------------------------------------------------------------+
-
 //+------------------------------------------------------------------+
 // Outside of Void OnTick()  
-// Declare Variables & Function
 //+------------------------------------------------------------------+
+
+   extern bool Weekend_Risk = true;
    bool close_buy;
    bool close_sell;
    bool Weekend_Close_Order; 
@@ -23,8 +20,7 @@
    int MagicNumber = 1001;
 
 //+------------------------------------------------------------------+
-//  Checks if it's Friday @ 19:00 GMT or Later
-//+------------------------------------------------------------------+
+
 bool Allow_Trading()
 {
     if(DayOfWeek()==5 && Hour() >= 19)
@@ -35,9 +31,9 @@ bool Allow_Trading()
 
 //+------------------------------------------------------------------+
 // Within Void OnTick()  
-// If Allow_Trading() == False // CLOSE ALL TRADES!!
 //+------------------------------------------------------------------+
- if((Allow_Trading()==false) && (getOpenTradesThisPair(MagicNumber)>0))
+
+ if((Weekend_Risk==false) && (Allow_Trading()==false) && (getOpenTradesThisPair(MagicNumber)>0))
     {
         Weekend_Close_Order = OrderSelect(ticket,SELECT_BY_TICKET);
         if(Weekend_Close_Order == false)
