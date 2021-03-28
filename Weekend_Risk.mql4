@@ -8,10 +8,13 @@
 #property description "To be used with the MT4 platform"
 
 //+------------------------------------------------------------------+
+
+   extern bool Weekend_Risk = true;
+
+//+------------------------------------------------------------------+
 // Outside of Void OnTick()  
 //+------------------------------------------------------------------+
 
-   extern bool Weekend_Risk = true;
    bool close_buy;
    bool close_sell;
    bool Weekend_Close_Order; 
