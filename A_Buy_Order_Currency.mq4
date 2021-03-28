@@ -9,9 +9,9 @@
 //+------------------------------------------------------------------+
 //| Script program start function                                    |
 //+------------------------------------------------------------------+
-   extern int TakeProfit = 1000;
-   extern int StopLoss = 1000;
-   extern int Slippage = 100;
+   extern int TakeProfit = 100;
+   extern int StopLoss = 100;
+   extern int Slippage = 5;
    extern double Lots = 0.1;
 
 void OnStart()
