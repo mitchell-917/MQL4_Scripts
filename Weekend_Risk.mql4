@@ -5,7 +5,7 @@
 //+------------------------------------------------------------------+
 #property version   "1.0"
 #property strict
-#property description "Toogle Weekend Risk"
+#property description "Weekend Risk"
 
 //+------------------------------------------------------------------+
 
