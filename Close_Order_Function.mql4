@@ -1,12 +1,12 @@
        
-    bool Close_Order;
+    bool close_order;
     bool close_buy
     bool close_sell
     
     
     
     
-    Close_Order = OrderSelect(ticket,SELECT_BY_TICKET);
+    close_order = OrderSelect(ticket,SELECT_BY_TICKET);
     if(Close_Order == false)
     {
         Alert("Error Selecting Order #", ticket);
