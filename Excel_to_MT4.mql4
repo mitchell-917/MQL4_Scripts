@@ -1,0 +1,14 @@
+            
+    while( FileIsEnding( handle ) == false )
+    {
+        i++;
+        text[i] = FilereadString( handle );
+        if ( FileIsEnding( handle ) == true )
+        {
+             xt = StrToDouble( text[i-3] );
+             bx = StrToDouble( text[i-2] );
+             break;
+        }
+    }
+
+    Alert( "xt = ", xt,"   bx = ", bx );
