@@ -1,0 +1,71 @@
+
+
+
+    bool Close_Open_Trades()
+    {
+        int order_type = OrderType();
+        if(OrderMagicNumber()== MagicNumber)
+        {
+            if(order_type == 0)
+            {
+                bool close_buy = OrderClose(ticket,OrderLots(), Bid, Slippage);
+                if(close_buy == false)
+                {
+                    Alert("Error Closing BUY Order #", ticket);
+                    Print (GetLastError());
+                    return(false)
+                }
+                return(true)
+            }
+            if(order_type == 1)
+            {
+                bool close_sell = OrderClose(ticket,OrderLots(), Ask, Slippage);
+                if(close_buy == false)
+                {
+                    Alert("Error Closing Sell Order #", ticket);
+                    Print (GetLastError());
+                    return(false)
+                }
+                return(true)
+            }           
+        }
+    }
+
+
+// -----------------------------------------------------------------------------------------
+
+
+       
+    bool close_order;
+    bool close_buy
+    bool close_sell
+     
+    
+    close_order = OrderSelect(ticket,SELECT_BY_TICKET);
+    if(Close_Order == false)
+    {
+        Alert("Error Selecting Order #", ticket);
+        Print (GetLastError());   
+    }                     
+    int order_type = OrderType();
+    if(OrderMagicNumber()== MagicNumber)
+    {
+        if(order_type == 0)
+        {   
+            close_buy = OrderClose(ticket, Lots, Bid, Slippage);
+            if(close_buy == false)
+            {
+                Alert("Error Closing BUY Order #", ticket);
+                Print (GetLastError());
+            }
+        }                           
+        if(order_type == 1)
+        {
+            close_sell = OrderClose(ticket, Lots, Ask, Slippage);
+            if(close_sell == false)
+            {
+                Alert("Error Closing SELL Order #", ticket);
+                Print (GetLastError());
+            }          
+        }
+    }
