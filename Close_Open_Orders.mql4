@@ -1,8 +1,14 @@
 
 
 
-    bool Close_Open_Trades()
+    bool Close_open_trades_with_order()
     {
+        bool Close_Order = OrderSelect(ticket,SELECT_BY_TICKET);
+        if(Close_Order == false)
+        {
+            Alert("Error Selecting Order #", ticket);
+            Print (GetLastError());   
+        }     
         int order_type = OrderType();
         if(OrderMagicNumber()== MagicNumber)
         {
@@ -29,8 +35,34 @@
                 return(true)
             }           
         }
-    }
+    } 
 
+    
+    bool Close_open_trades_without_order()
+    {
+        if(order_type == 0)
+        {
+            bool close_buy = OrderClose(ticket,OrderLots(), Bid, Slippage);
+            if(close_buy == false)
+            {
+                Alert("Error Closing BUY Order #", ticket);
+                Print (GetLastError());
+                return(false)
+            }
+        return(true)
+        }
+        if(order_type == 1)
+        {
+            bool close_sell = OrderClose(ticket,OrderLots(), Ask, Slippage);
+            if(close_buy == false)
+            {
+                Alert("Error Closing Sell Order #", ticket);
+                Print (GetLastError());
+                return(false)
+            }
+        return(true)
+        }           
+    }   
 
 // -----------------------------------------------------------------------------------------
 
